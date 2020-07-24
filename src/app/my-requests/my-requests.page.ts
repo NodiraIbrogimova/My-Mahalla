@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { PhotoService } from '../services/photo.service';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-my-requests',
+  templateUrl: 'my-requests.page.html',
+  styleUrls: ['my-requests.page.scss']
 })
-export class Tab2Page {
+export class MyRequestsPage implements OnInit{
 
   constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {}
 
