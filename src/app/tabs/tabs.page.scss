@@ -1,1 +1,20 @@
-
+ion-icon{
+    &[name="home"]{
+        content: url(../../assets/active-icons/incoming-icon-active.svg);
+    }
+    &[name="my-requests"]{
+        content: url(../../assets/active-icons/solved-icon-active.svg);
+    }
+    
+    &[name="add-request"]{
+        content: url(../../assets/active-icons/add-issue-icon-active.svg);
+    }
+    
+    &[name="search"]{
+        content: url(../../assets/active-icons/search-icon-active.svg);
+    }
+    
+    &[name="profile"]{
+        content: url(../../assets/active-icons/user-icon-active.svg);
+    }
+}
