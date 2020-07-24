@@ -13,5 +13,222 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Home page"></app-explore-container>
+    <ion-segment direction="x" class="categories-wrapper m-t-sm">
+        <div class="category"><img style="  max-width:  fit-content !important;" class="button inline-button" width="60"
+                                   height="60" src="assets/categories-icons/ecology-category.png">
+            <span class="category-text">{{categories.ecology}}</span>
+        </div>
+        <div class="category"><img class="button" width="60" height="60"
+                                   src="assets/categories-icons/electricity-category.png"
+                                   style="  max-width:  fit-content !important;"><span
+                class="category-text">{{categories.energy}}</span></div>
+        <div class="category"><img class="button" width="60" height="60"
+                                   src="assets/categories-icons/residence-category.png"
+                                   style="  max-width:  fit-content !important;"><span
+                class="category-text">{{categories.residence}}</span></div>
+        <div class="category"><img class="button" width="60" height="60" src="assets/categories-icons/road-category.png"
+                                   style="  max-width:  fit-content !important;"><span
+                class="category-text">{{categories.roads}}</span></div>
+        <div class="category"><img class="button" width="60" height="60"
+                                   src="assets/categories-icons/water-category.png"
+                                   style="  max-width:  fit-content !important;"><span
+                class="category-text">{{categories.water}}</span></div>
+        <div class="category"><img class="button" width="60" height="60"
+                                   src="assets/categories-icons/social-category.png"
+                                   style="  max-width:  fit-content !important;"><span
+                class="category-text">{{categories.social}}</span></div>
+        <div class="category"><img class="button" width="60" height="60"
+                                   src="assets/categories-icons/financial-category.png"
+                                   style="  max-width:  fit-content !important;"><span
+                class="category-text">{{categories.financial}}</span></div>
+        <div class="category"><img class="button" width="60" height="60"
+                                   src="assets/categories-icons/education-category.png"
+                                   style="  max-width:  fit-content !important;"><span
+                class="category-text">{{categories.education}}</span></div>
+    </ion-segment>
+
+    <ion-card>
+        <ion-row>
+            <ion-col size="2"><img class="features-section-icon" src="assets/categories-icons/features-section.png">
+            </ion-col>
+            <ion-col size="10">
+                <ion-col size="12" class="block"><span class="category-title">Featured Public Inquiries</span></ion-col>
+                <ion-col size="12">
+                    <ion-label>View the most popular inquiries around you.</ion-label>
+                </ion-col>
+            </ion-col>
+        </ion-row>
+
+        <ion-segment direction="x" class="images-wrapper">
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-a-1.png" style="max-width: inherit !important;">
+                <span class="card-text">Trees Cut Illegally</span>
+                <span class="card-sub-text">
+          Ecology, Tashkent
+        </span>
+            </div>
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-a-2.png" style="max-width: inherit !important;">
+                <span class="card-text">New Playground</span>
+                <span class="card-sub-text">
+          Residence, Tashkent
+        </span>
+            </div>
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-a-3.png" style="max-width: inherit !important;">
+                <span class="card-text">Chess Championship</span>
+                <span class="card-sub-text">
+         Social, Samarkand
+        </span>
+            </div>
+        </ion-segment>
+
+        <ion-item>
+            <ion-label class="text-muted"></ion-label>
+        </ion-item>
+
+        <ion-item (click)="goToMyRequests()">
+            <ion-label class="text-muted block" (click)="goToMyRequests()">View All</ion-label>
+            <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-row>
+            <ion-col size="2"><img class="features-section-icon" src="assets/categories-icons/road-category.png">
+            </ion-col>
+            <ion-col size="10">
+                <ion-col size="12" class="block"><span class="category-title">"Best" Roads In Town</span></ion-col>
+                <ion-col size="12">
+                    <ion-label>View the most popular inquiries about the roads in town.</ion-label>
+                </ion-col>
+            </ion-col>
+        </ion-row>
+
+        <ion-segment direction="x" class="images-wrapper">
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-b-1.png" style="max-width: inherit !important;">
+                <span class="card-text">Roads</span>
+                <span class="card-sub-text">
+            Residence, Tashkent
+          </span>
+            </div>
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-b-2.png" style="max-width: inherit !important;">
+                <span class="card-text">Roads</span>
+                <span class="card-sub-text">
+            Residence, Tashkent
+          </span>
+            </div>
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-b-3.png" style="max-width: inherit !important;">
+                <span class="card-text">Roads</span>
+                <span class="card-sub-text">
+            Residence, Tashkent
+          </span>
+            </div>
+        </ion-segment>
+
+        <ion-item>
+            <ion-label class="text-muted"></ion-label>
+        </ion-item>
+
+        <ion-item (click)="goToMyRequests()">
+            <ion-label class="text-muted block">View All</ion-label>
+            <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+    </ion-card>
+
+    <!-- <ion-card>
+      <ion-row>
+        <ion-col size="2"> <img class="features-section-icon" src="assets/categories-icons/ecology-category.png">
+        </ion-col>
+        <ion-col size="10">
+          <ion-col size="12" class="block"><span class="category-title">Save our Ecology</span></ion-col>
+          <ion-col size="12">
+            <ion-label>View the most popular inquiries about the roads in town.</ion-label>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+  
+      <ion-segment direction="x" class="images-wrapper">
+        <div class="card-body">
+          <img class="image" src="assets/photos/photo-b-1.png" style="max-width: inherit !important;">
+          <span class="card-text">Ecology</span>
+          <span class="card-sub-text">
+            Residence, Tashkent
+          </span>
+        </div>
+        <div class="card-body">
+          <img class="image" src="assets/photos/photo-b-2.png" style="max-width: inherit !important;">
+          <span class="card-text">Ecology</span>
+          <span class="card-sub-text">
+            Residence, Tashkent
+          </span>
+        </div>
+        <div class="card-body">
+          <img class="image" src="assets/photos/photo-b-3.png" style="max-width: inherit !important;">
+          <span class="card-text">Ecology</span>
+          <span class="card-sub-text">
+            Residence, Tashkent
+          </span>
+        </div>
+      </ion-segment>
+  
+      <ion-item>
+        <ion-label class="text-muted"></ion-label>
+      </ion-item>
+  
+      <ion-item (click)="goToMyRequests()">
+        <ion-label class="text-muted block" >View All</ion-label>
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-item>
+    </ion-card> -->
+
+    <ion-card>
+        <ion-row>
+            <ion-col size="2"><img class="features-section-icon" src="assets/categories-icons/electricity-category.png">
+            </ion-col>
+            <ion-col size="10">
+                <ion-col size="12" class="block"><span class="category-title">Energy related requests</span></ion-col>
+                <ion-col size="12">
+                    <ion-label>View the most popular inquiries about the roads in town.</ion-label>
+                </ion-col>
+            </ion-col>
+        </ion-row>
+
+        <ion-segment direction="x" class="images-wrapper">
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-c-1.jpg" style="max-width: inherit !important;">
+                <span class="card-text">Light goes every 2 hours</span>
+                <span class="card-sub-text">
+              Roads, Bukhara
+          </span>
+            </div>
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-c-2.jpg" style="max-width: inherit !important;">
+                <span class="card-text">No lightening on roads in darkness</span>
+                <span class="card-sub-text">
+              Roads, Khiva
+          </span>
+            </div>
+            <div class="card-body">
+                <img class="image" src="assets/photos/photo-c-3.jpg" style="max-width: inherit !important;">
+                <span class="card-text">Storm caused severe damage</span>
+                <span class="card-sub-text">
+            Roads, Tashkent
+          </span>
+            </div>
+        </ion-segment>
+
+        <ion-item>
+            <ion-label class="text-muted"></ion-label>
+        </ion-item>
+
+        <ion-item (click)="goToMyRequests()">
+            <ion-label class="text-muted block">View All</ion-label>
+            <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+    </ion-card>
+    
 </ion-content>

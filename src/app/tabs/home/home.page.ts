@@ -6,6 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
+  categories = {
+    ecology:'Ecology',
+    energy:'Energy',
+    residence:'Residence',
+    roads:'Roads',
+    water:'Water',
+    social:'Social',
+    financial:'Financial',
+    education:'Education'
+  };
 
   constructor() {}
 
