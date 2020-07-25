@@ -24,7 +24,7 @@ export class MyRequestsPage {
         {
             img: 'assets/photos/photo-a-3.png',
             title: 'Chess Championship',
-            subtitle: 'Social, Samarkandt',
+            subtitle: 'Social, Samarkand',
             location: 'Navoi, Zarafshon',
             content: 'Today I saw unfair traetment towards us! I took first place at chess chempionship held in our school today. But, I was told that I was late to chempionship and it reduced my score. Actually, I was late only for the time we were told to come not to championship!!!'
         },

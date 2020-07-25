@@ -18,19 +18,33 @@ ion-content ion-toolbar {
   -webkit-padding-end: 10px;
   padding-inline-end: 10px;
 
-  &__title{
-    font-size: 1.2rem;
+  &__title {
+    font-size: 1.2em;
     font-weight: 600;
     line-height: 1.1;
   }
 
-  &__subtitle{
+  &__subtitle {
     font-size: 0.7rem;
-    padding-top: 0.7rem;
+    padding-top: 0.7em;
   }
 
   &__location {
-    padding-top: 0.7rem;
-    font-size: 1.4em;
+    padding-top: 0.7em;
+    display: flex;
+
+    ion-label {
+      flex: 6;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
+
+  ion-icon {
+    flex: 1;
+    font-size: 20px;
+    padding-right: 0.3em;
+  }
+
 }
