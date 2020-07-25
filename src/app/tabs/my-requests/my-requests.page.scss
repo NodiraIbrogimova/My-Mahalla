@@ -3,8 +3,9 @@ ion-content ion-toolbar {
 }
 
 .img-of-card {
-  background-size: contain;
   background: #fff no-repeat center;
+  background-position: 50% 50%;
+  background-size: auto 100%;
   display: inline-block;
   border-radius: 5px;
   width: 100%;
