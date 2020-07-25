@@ -3,11 +3,8 @@ ion-content ion-toolbar {
 }
 
 .img-of-card {
-  background-image: url("../../../assets/photos/photo-a-1.png");
-  background-color: #fff;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: contain;
+  background: #fff no-repeat center;
   display: inline-block;
   border-radius: 5px;
   width: 100%;
@@ -20,8 +17,19 @@ ion-content ion-toolbar {
   -webkit-padding-end: 10px;
   padding-inline-end: 10px;
 
+  &__title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  &__subtitle{
+    font-size: 0.7rem;
+    padding-top: 0.7rem;
+  }
+
   &__location {
-    padding-top: 1rem;
+    padding-top: 0.7rem;
     font-size: 1.4em;
   }
 }
