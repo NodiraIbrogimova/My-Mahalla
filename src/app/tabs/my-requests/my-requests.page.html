@@ -7,18 +7,18 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let card of cards; index as position">
+    <ion-card class="card" *ngFor="let card of cards; index as position">
         <ion-grid>
             <ion-row>
                 <ion-col size="6" size-sm>
-                    <span class="img-of-card" [ngStyle]="{'background-image': 'url(' + card.img + ')'}"></span>
+                    <img class="img-of-card" src="{{card.img}}">
                 </ion-col>
                 <ion-col size="6" size-sm>
                     <ion-list lines="inset">
-                        <ion-card-header class="card-header">
-                            <ion-card-title class="card-header__title">{{card.title}}</ion-card-title>
-                            <ion-card-subtitle class="card-header__subtitle">{{card.subtitle}}</ion-card-subtitle>
-                            <div class="card-header__location">
+                        <ion-card-header class="card__header">
+                            <ion-card-title class="card__header__title">{{card.title}}</ion-card-title>
+                            <ion-card-subtitle class="card__header__subtitle">{{card.subtitle}}</ion-card-subtitle>
+                            <div class="card__header__location">
                                 <ion-icon name="location-outline"></ion-icon>
                                 <ion-label class="ion-text-wrap">
                                     {{card.location}}
