@@ -15,9 +15,11 @@
 </ion-header>
 
 <ion-content fullscreen="true">
-    <ion-item lines="none">
-        <h1>Home</h1>
-    </ion-item>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Home</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
     <ion-segment direction="x" class="categories-wrapper m-t-sm">
         <div *ngFor="let category of categories" class="category">
