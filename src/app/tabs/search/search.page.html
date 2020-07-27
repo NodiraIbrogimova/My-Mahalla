@@ -11,128 +11,16 @@
         </ion-toolbar>
     </ion-header>
 
-    <!-- Default Item -->
-    <ion-item>
-        <ion-label>
-            Item
-        </ion-label>
-    </ion-item>
-
-    <!-- Item as an Anchor -->
-    <ion-item href="https://www.ionicframework.com">
-        <ion-label>
-            Anchor Item
-        </ion-label>
-    </ion-item>
-
-    <ion-item color="secondary">
-        <ion-label>
-            Secondary Color Item
-        </ion-label>
-    </ion-item>
-
-    <ion-item detail>
-        <ion-label>
-            Standard Item with Detail Arrow
-        </ion-label>
-    </ion-item>
-
-    <ion-item detail="false" href="https://www.ionicframework.com">
-        <ion-label>
-            Anchor Item with no Detail Arrow
-        </ion-label>
-    </ion-item>
+    <ion-progress-bar type="indeterminate" buffer="0.1"></ion-progress-bar>
 
     <ion-list>
-        <ion-item>
+
+        <ion-item *ngFor="let loc_label of locations">
             <ion-label>
-                Item
+                {{loc_label}}
             </ion-label>
         </ion-item>
 
-        <ion-item lines="none">
-            <ion-label>
-                No Lines Item
-            </ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-label class="ion-text-wrap">
-                Multiline text that should wrap when it is too long
-                to fit on one line in the item.
-            </ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-label class="ion-text-wrap">
-                <ion-text color="primary">
-                    <h3>H3 Primary Title</h3>
-                </ion-text>
-                <p>Paragraph line 1</p>
-                <ion-text color="secondary">
-                    <p>Paragraph line 2 secondary</p>
-                </ion-text>
-            </ion-label>
-        </ion-item>
-
-        <ion-item lines="full">
-            <ion-label>
-                Item with Full Lines
-            </ion-label>
-        </ion-item>
-
-    </ion-list>
-
-    <!-- Item Inset Lines -->
-    <ion-item lines="inset">
-        <ion-label>Item Lines Inset</ion-label>
-    </ion-item>
-
-    <!-- Item Full Lines -->
-    <ion-item lines="full">
-        <ion-label>Item Lines Full</ion-label>
-    </ion-item>
-
-    <!-- Item None Lines -->
-    <ion-item lines="none">
-        <ion-label>Item Lines None</ion-label>
-    </ion-item>
-
-    <!-- List Full Lines -->
-    <ion-list lines="full">
-        <ion-item>
-            <ion-label>Full Lines Item 1</ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>Full Lines Item 2</ion-label>
-        </ion-item>
-    </ion-list>
-
-    <!-- List Inset Lines -->
-    <ion-list lines="inset">
-        <ion-item>
-            <ion-label>Inset Lines Item 1</ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>Inset Lines Item 2</ion-label>
-        </ion-item>
-    </ion-list>
-
-    <!-- List No Lines -->
-    <ion-list lines="none">
-        <ion-item>
-            <ion-label>No lines Item 1</ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>No lines Item 2</ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>No lines Item 3</ion-label>
-        </ion-item>
     </ion-list>
 
 </ion-content>
