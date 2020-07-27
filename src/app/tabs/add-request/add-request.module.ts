@@ -1,19 +1,19 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { AddRequestPage } from './add-request.page';
-import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
+import {IonicModule} from '@ionic/angular';
+import {RouterModule} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {AddRequestPage} from './add-request.page';
+import {ExploreContainerComponentModule} from '../../explore-container/explore-container.module';
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    ExploreContainerComponentModule,
-    RouterModule.forChild([{ path: '', component: AddRequestPage }])
-  ],
-  declarations: [AddRequestPage]
+    imports: [
+        IonicModule,
+        CommonModule,
+        FormsModule,
+        ExploreContainerComponentModule,
+        RouterModule.forChild([{path: '', component: AddRequestPage}])
+    ],
+    declarations: [AddRequestPage]
 })
 export class AddRequestPageModule {}

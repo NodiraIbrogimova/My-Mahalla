@@ -11,6 +11,49 @@
         </ion-toolbar>
     </ion-header>
 
+    <ion-item lines="none">
+        <ion-label>Pick a category</ion-label>
+    </ion-item>
+
+    <ion-segment direction="x" class="categories-wrapper m-t-sm">
+        <div *ngFor="let category of categories" class="category">
+            <img style="  max-width:  fit-content !important;"
+                 class="button inline-button" width="60"
+                 height="60" src="{{category.img}}">
+            <span class="category-text">{{category.type}}</span>
+        </div>
+    </ion-segment>
+
+    <ion-item lines="inset" class="divider"></ion-item>
+
+    <ion-item lines="none">
+        <ion-label>Title</ion-label>
+    </ion-item>
+
+    <!-- Textarea in an item with a placeholder -->
+    <ion-item lines="inset">
+        <ion-textarea placeholder="type title here..."></ion-textarea>
+    </ion-item>
+
+    <ion-item lines="none">
+        <ion-label>Location</ion-label>
+    </ion-item>
+
+    <ion-item lines="inset">
+        <ion-range pin="true" color="danger" min="21" max="72" step="3" snaps="true">
+            <ion-label slot="start">Low</ion-label>
+            <ion-label slot="end">High</ion-label>
+        </ion-range>
+    </ion-item>
+
+    <ion-item lines="none">
+        <ion-label>Description</ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+        <ion-textarea class="description" placeholder="  type description here..."></ion-textarea>
+    </ion-item>
+
     <ion-grid>
         <ion-row>
             <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
@@ -20,9 +63,11 @@
         </ion-row>
     </ion-grid>
 
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+
+    <ion-fab vertical="bottom" slot="fixed" horizontal="center">
         <ion-fab-button (click)="photoService.addNewToGallery()">
             <ion-icon name="camera"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
 </ion-content>
