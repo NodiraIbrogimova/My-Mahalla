@@ -52,22 +52,6 @@ ion-content ion-toolbar {
   }
 }
 
-.top-header {
-  margin: auto 5px;
-}
-
-.right {
-  text-align: right;
-}
-
-.features-section-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  margin-right: 4px;
-  margin: 4px auto;
-}
-
 .category-title {
   font-size: 16px;
   color: #4f4e54;
@@ -118,6 +102,39 @@ ion-content ion-toolbar {
 }
 
 .centered {
-  margin: auto;
+  //left: 50%;
+  //margin-left: unset;
+  //margin-left: -100px;
   text-align: center;
+
 }
+
+.centered ion-button {
+  background-color: rgb(56, 128, 255);
+  border-radius: 50%;
+}
+
+ion-icon[name="camera"] {
+  color: #fff;
+}
+
+//.button-solid.ion-color .button-native {
+//  background-color: transparent;
+//}
+//
+//button{
+//  background-color: blue;
+//}
+
+//.centered ion-label {
+//  margin: auto;
+//}
+//
+//.camera-text {
+//  position: absolute;
+//  bottom: 65px;
+//}
+//
+//.image-pos {
+//  position: relative;
+//}

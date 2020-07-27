@@ -54,6 +54,10 @@
         <ion-textarea class="description" placeholder="  type description here..."></ion-textarea>
     </ion-item>
 
+    <ion-item lines="none">
+        <ion-label>Upload Request Photo</ion-label>
+    </ion-item>
+
     <ion-grid>
         <ion-row>
             <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
@@ -63,11 +67,10 @@
         </ion-row>
     </ion-grid>
 
-
-    <ion-fab vertical="bottom" slot="fixed" horizontal="center">
-        <ion-fab-button (click)="photoService.addNewToGallery()">
-            <ion-icon name="camera"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+    <div class="centered">
+        <ion-button size="large" shape="round" (click)="photoService.addNewToGallery()">
+            <ion-icon slot="icon-only" name="camera"></ion-icon>
+        </ion-button>
+    </div>
 
 </ion-content>
