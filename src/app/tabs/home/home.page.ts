@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {NavController} from '@ionic/angular';
 
 @Component({
     selector: 'app-home',
@@ -17,10 +18,10 @@ export class HomePage {
         {type: 'Education', img: 'assets/categories-icons/education-category.png'},
     ];
 
-    constructor() {
+    constructor(private navController: NavController) {
     }
 
     goToMyRequests() {
-
+        this.navController.navigateRoot(`app/tabs/my-requests`);
     }
 }

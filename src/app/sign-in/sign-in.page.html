@@ -1,33 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Sign In</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Sign In
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item  style="margin: auto 25px;" class="m-t-md">
-    <ion-label position="floating">First Name</ion-label>
-    <!-- Input with placeholder -->
-    <ion-input placeholder="Enter Input"></ion-input>
-  </ion-item>
+    <ion-card>
+        <ion-header collapse="condense">
+            <ion-item lines="full">
+                <ion-label position="floating">First Name</ion-label>
+                <ion-textarea></ion-textarea>
+            </ion-item>
 
-  <ion-item  style="margin: auto 25px;">
-    <ion-label position="floating">Last Name</ion-label>
-    <!-- Input with placeholder -->
-    <ion-input placeholder="Enter Input"></ion-input>
-  </ion-item>
+            <ion-item lines="full">
+                <ion-label position="floating">Last Name</ion-label>
+                <ion-textarea></ion-textarea>
+            </ion-item>
 
-  <ion-item  style="margin: auto 25px;">
-    <ion-label position="floating">Phone Number</ion-label>
-    <ion-input placeholder="+99 8(xx) xxx-xx-xx"></ion-input>
-  </ion-item>
+            <ion-item lines="none">
+                <ion-label position="floating">Phone Number</ion-label>
+            </ion-item>
 
-  <ion-row  style="margin: auto 25px;">
-    <ion-col size="4"> </ion-col>
-    <ion-col size="4">
-      <ion-button (click)="navigateToProfile()">Sign In</ion-button>
-    </ion-col>
-    <ion-col size="4"> </ion-col>
-  </ion-row>
+
+            <ion-item>
+                <ion-avatar slot="start">
+                    <ion-icon name="call-outline"></ion-icon>
+                </ion-avatar>
+                <ion-textarea></ion-textarea>
+            </ion-item>
+        </ion-header>
+
+
+        <ion-card-content class="text-center">
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-button color="light">REGISTER</ion-button>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-button color="success" (click)="navigateToProfile()">LOGIN</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>
+
+
+
