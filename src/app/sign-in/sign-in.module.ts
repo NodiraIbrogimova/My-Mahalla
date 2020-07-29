@@ -1,11 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormBuilder, FormsModule} from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
 
 import {IonicModule} from '@ionic/angular';
 
 import {SignInPage} from './sign-in.page';
+import {ExploreContainerComponentModule} from '../explore-container/explore-container.module';
 
 const routes: Routes = [
     {
@@ -19,9 +20,11 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
+        ExploreContainerComponentModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [SignInPage]
+    declarations: [SignInPage],
+    providers: [FormBuilder]
 })
 export class SignInPageModule {
 }
