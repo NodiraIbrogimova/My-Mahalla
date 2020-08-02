@@ -25,10 +25,7 @@ export class SignInPage {
         this.slideOneForm = formBuilder.group({
             firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
             lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-            age: ['', AgeValidator.isValid]
-        });
-
-        this.slideTwoForm = formBuilder.group({
+            age: ['', AgeValidator.isValid],
             username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')]), UsernameValidator.checkUsername],
             privacy: ['', Validators.required],
             bio: ['']
