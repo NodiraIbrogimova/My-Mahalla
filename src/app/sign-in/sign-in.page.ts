@@ -18,6 +18,8 @@ export class SignInPage {
     public slideOneForm: FormGroup;
     public slideTwoForm: FormGroup;
 
+    images = ['assets/photos/logo.png', 'assets/photos/communication.png', 'assets/photos/communicate-problems.png'];
+
     public submitAttempt: boolean = false;
 
     constructor(private router: Router, private navController: NavController, private formBuilder: FormBuilder) {
