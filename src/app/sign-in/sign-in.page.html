@@ -5,33 +5,33 @@
     <ion-card>
 
         <ion-slides #signupSlider pager="true" fullscreen scroll-y="false">
-            <ion-slide>
-                <div class="slide">
-                    <div class="slide__img">
-                        <img class="slide-img text-center" src="assets/photos/logo.png"/>
-                    </div>
-                    <div class="slide__header">
-                        <h2>My Mahalla</h2>
-                    </div>
-                    <div class="slide__desc">
-                        <p>Reach local government agencies via <b class="w-500">mobile app</b></p>
-                    </div>
-                </div>
-            </ion-slide>
+            <!--<ion-slide>-->
+            <!--<div class="slide">-->
+            <!--<div class="slide__img">-->
+            <!--<img class="slide-img text-center" src="assets/photos/logo.png"/>-->
+            <!--</div>-->
+            <!--<div class="slide__header">-->
+            <!--<h2>My Mahalla</h2>-->
+            <!--</div>-->
+            <!--<div class="slide__desc">-->
+            <!--<p>Reach local government agencies via <b class="w-500">mobile app</b></p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</ion-slide>-->
 
-            <ion-slide>
-                <div class="slide">
-                    <div class="slide__img text-center">
-                        <img src="assets/photos/communication.png"/>
-                    </div>
-                    <div class="slide__header">
-                        <h2>My Mahalla</h2>
-                    </div>
-                    <div class="slide__desc">
-                        <p>Serves as a tool for communication between <b>people and government</b> agencies.</p>
-                    </div>
-                </div>
-            </ion-slide>
+            <!--<ion-slide>-->
+            <!--<div class="slide">-->
+            <!--<div class="slide__img text-center">-->
+            <!--<img src="assets/photos/communication.png"/>-->
+            <!--</div>-->
+            <!--<div class="slide__header">-->
+            <!--<h2>My Mahalla</h2>-->
+            <!--</div>-->
+            <!--<div class="slide__desc">-->
+            <!--<p>Serves as a tool for communication between <b>people and government</b> agencies.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</ion-slide>-->
 
             <ion-slide>
                 <div class="slide">
@@ -51,68 +51,68 @@
 
                 <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 
+
                 <ion-list class="slide--list">
+                    <p>Registering new account is in process. Please fill the form with current data and login to
+                        test
+                        the app.</p>
 
-                    <form [formGroup]="slideOneForm">
-
+                    <form [formGroup]="registerForm" (ngSubmit)="save()">
                         <ion-item>
-                            <ion-label position="floating">First Name</ion-label>
+                            <ion-label position="stacked">First Name
+                                <ion-text color="danger" class="ion-color ion-color-danger md hydrated">*</ion-text>
+                            </ion-label>
                             <ion-input formControlName="firstName" type="text"
-                                       [class.invalid]="!slideOneForm.controls.firstName.valid && (slideOneForm.controls.firstName.dirty || submitAttempt)"></ion-input>
+                                       [class.invalid]="!registerForm.controls.firstName.valid && (registerForm.controls.firstName.dirty || submitAttempt)"></ion-input>
                         </ion-item>
 
                         <ion-item
-                                *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
+                                *ngIf="!registerForm.controls.firstName.valid  && (registerForm.controls.firstName.dirty || submitAttempt)">
                             <p>Please enter a valid name.</p>
                         </ion-item>
 
                         <ion-item>
-                            <ion-label position="floating">Last Name</ion-label>
+                            <ion-label position="stacked">Last Name
+                                <ion-text color="danger" class="ion-color ion-color-danger md hydrated">*</ion-text>
+                            </ion-label>
                             <ion-input formControlName="lastName" type="text"
-                                       [class.invalid]="!slideOneForm.controls.lastName.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
+                                       [class.invalid]="!registerForm.controls.lastName.valid && (registerForm.controls.age.dirty || submitAttempt)"></ion-input>
                         </ion-item>
 
                         <ion-item
-                                *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
+                                *ngIf="!registerForm.controls.lastName.valid  && (registerForm.controls.lastName.dirty || submitAttempt)">
                             <p>Please enter a valid name.</p>
                         </ion-item>
 
                         <ion-item>
-                            <ion-label position="floating">Age</ion-label>
+                            <ion-label position="stacked">Age
+                                <ion-text color="danger" class="ion-color ion-color-danger md hydrated">*</ion-text>
+                            </ion-label>
                             <ion-input formControlName="age" type="number"
-                                       [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
+                                       [class.invalid]="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)"></ion-input>
                         </ion-item>
 
                         <ion-item
-                                *ngIf="!slideOneForm.controls.age.valid  && (slideOneForm.controls.age.dirty || submitAttempt)">
+                                *ngIf="!registerForm.controls.age.valid  && (registerForm.controls.age.dirty || submitAttempt)">
                             <p>Please enter a valid age.</p>
                         </ion-item>
 
                         <ion-item>
-                            <ion-label position="floating">Username</ion-label>
+                            <ion-label position="stacked">Username
+                                <ion-text color="danger" class="ion-color ion-color-danger md hydrated">*</ion-text>
+                            </ion-label>
                             <ion-input
-                                    [class.invalid]="!slideOneForm.controls.username.valid && (slideOneForm.controls.username.dirty || submitAttempt)"
+                                    [class.invalid]="!registerForm.controls.username.valid && (registerForm.controls.username.dirty || submitAttempt)"
                                     formControlName="username" type="text"></ion-input>
                         </ion-item>
 
-                        <ion-item *ngIf="slideOneForm.controls.username.pending">
+                        <ion-item *ngIf="registerForm.controls.username.pending">
                             <p>Checking username...</p>
                         </ion-item>
 
                         <ion-item
-                                *ngIf="!slideOneForm.controls.username.valid && !slideOneForm.controls.username.pending && (slideOneForm.controls.username.dirty || submitAttempt)">
+                                *ngIf="!registerForm.controls.username.valid && !registerForm.controls.username.pending && (registerForm.controls.username.dirty || submitAttempt)">
                             <p>Sorry, that username can not be used!</p>
-                        </ion-item>
-
-                        <ion-item>
-                            <ion-label position="floating">Privacy</ion-label>
-                            <ion-select
-                                    [class.invalid]="!slideOneForm.controls.privacy.valid && (slideOneForm.controls.privacy.dirty || submitAttempt)"
-                                    formControlName="privacy">
-                                <ion-select-option value="public" checked="true">Public</ion-select-option>
-                                <ion-select-option value="friends">Friends Only</ion-select-option>
-                                <ion-select-option value="private">Private</ion-select-option>
-                            </ion-select>
                         </ion-item>
 
                         <ion-item>
@@ -120,6 +120,18 @@
                             <ion-textarea formControlName="bio"></ion-textarea>
                         </ion-item>
 
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="6" class="tooltip-container">
+                                    <span class="tooltip">Registration is unavailable</span>
+                                    <ion-button color="light" disabled="{{true}}">REGISTER</ion-button>
+                                </ion-col>
+                                <ion-col size="6">
+                                    <ion-button color="success" type="submit" disabled="{{!registerForm.valid}}">LOGIN
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
                     </form>
 
                 </ion-list>
@@ -129,54 +141,6 @@
         </ion-slides>
 
     </ion-card>
-    <!--<form (ngSubmit)="logForm()">-->
-
-    <!--<ion-header collapse="condense">-->
-    <!--<ion-toolbar>-->
-    <!--<ion-title size="large">Sign In</ion-title>-->
-    <!--</ion-toolbar>-->
-    <!--</ion-header>-->
-    <!--<ion-card>-->
-    <!--<ion-header collapse="condense">-->
-    <!--<ion-item lines="none">-->
-    <!--<ion-label position="floating">First Name</ion-label>-->
-    <!--<ion-input type="text" [(ngModel)]="signInForm.firstName" name="firstName"></ion-input>-->
-    <!--</ion-item>-->
-
-    <!--<ion-item lines="none" class="m-t-sm">-->
-    <!--<ion-label position="floating">Last Name</ion-label>-->
-    <!--<ion-input [(ngModel)]="signInForm.lastName" name="lastName"></ion-input>-->
-    <!--</ion-item>-->
-    <!--<ion-item lines="none" class="m-t-sm">-->
-    <!--<ion-label>Phone Number</ion-label>-->
-    <!--<ion-input position="floating" [(ngModel)]="signInForm.phoneNumber" name="phoneNumber"></ion-input>-->
-    <!--</ion-item>-->
-
-    <!--<ion-item>-->
-    <!--<ion-avatar slot="start">-->
-    <!--<ion-icon name="call-outline"></ion-icon>-->
-    <!--</ion-avatar>-->
-    <!--<ion-textarea></ion-textarea>-->
-    <!--</ion-item>-->
-    <!--</ion-header>-->
-
-    <!--<ion-card-content class="text-center">-->
-
-    <!--<ion-grid>-->
-    <!--<ion-row>-->
-    <!--<ion-col size="6">-->
-    <!--<ion-button color="light">REGISTER</ion-button>-->
-    <!--</ion-col>-->
-    <!--<ion-col size="6">-->
-    <!--<ion-button color="success" (click)="navigateToProfile()">LOGIN</ion-button>-->
-    <!--</ion-col>-->
-    <!--</ion-row>-->
-    <!--</ion-grid>-->
-
-    <!--</ion-card-content>-->
-    <!--</ion-card>-->
-    <!--</form>-->
-
 </ion-content>
 
 
