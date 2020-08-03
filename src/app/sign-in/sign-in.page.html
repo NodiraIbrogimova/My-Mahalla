@@ -5,33 +5,33 @@
     <ion-card>
 
         <ion-slides #signupSlider pager="true" fullscreen scroll-y="false">
-            <!--<ion-slide>-->
-            <!--<div class="slide">-->
-            <!--<div class="slide__img">-->
-            <!--<img class="slide-img text-center" src="assets/photos/logo.png"/>-->
-            <!--</div>-->
-            <!--<div class="slide__header">-->
-            <!--<h2>My Mahalla</h2>-->
-            <!--</div>-->
-            <!--<div class="slide__desc">-->
-            <!--<p>Reach local government agencies via <b class="w-500">mobile app</b></p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</ion-slide>-->
+            <ion-slide>
+                <div class="slide">
+                    <div class="slide__img">
+                        <img class="slide-img text-center" src="assets/photos/logo.png"/>
+                    </div>
+                    <div class="slide__header">
+                        <h2>My Mahalla</h2>
+                    </div>
+                    <div class="slide__desc">
+                        <p>Reach local government agencies via <b class="w-500">mobile app</b></p>
+                    </div>
+                </div>
+            </ion-slide>
 
-            <!--<ion-slide>-->
-            <!--<div class="slide">-->
-            <!--<div class="slide__img text-center">-->
-            <!--<img src="assets/photos/communication.png"/>-->
-            <!--</div>-->
-            <!--<div class="slide__header">-->
-            <!--<h2>My Mahalla</h2>-->
-            <!--</div>-->
-            <!--<div class="slide__desc">-->
-            <!--<p>Serves as a tool for communication between <b>people and government</b> agencies.</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</ion-slide>-->
+            <ion-slide>
+                <div class="slide">
+                    <div class="slide__img text-center">
+                        <img src="assets/photos/communication.png"/>
+                    </div>
+                    <div class="slide__header">
+                        <h2>My Mahalla</h2>
+                    </div>
+                    <div class="slide__desc">
+                        <p>Serves as a tool for communication between <b>people and government</b> agencies.</p>
+                    </div>
+                </div>
+            </ion-slide>
 
             <ion-slide>
                 <div class="slide">
@@ -115,6 +115,26 @@
                             <p>Sorry, that username can not be used!</p>
                         </ion-item>
 
+
+                        <ion-item>
+                            <ion-label position="stacked">Phone Number
+                                <ion-text color="danger" class="ion-color ion-color-danger md hydrated">*</ion-text>
+                            </ion-label>
+                            <ion-input
+                                    [class.invalid]="!registerForm.controls.phoneNumber.valid && (registerForm.controls.phoneNumber.dirty || submitAttempt)"
+                                    formControlName="username" type="number"></ion-input>
+                        </ion-item>
+
+
+                        <div *ngIf="submitted && registerForm.controls.phoneNumber.errors" class="invalid-feedback">
+                            <div *ngIf="registerForm.controls.phoneNumber.errors.required">Phone number is required
+                            </div>
+                            <div *ngIf="registerForm.controls.phoneNumber.errors.pattern || registerForm.controls.phoneNumber.errors.maxlength || registerForm.controls.phoneNumber.errors.minlength">
+                                Phone number must be at least 10 numbers
+                            </div>
+                        </div>
+
+
                         <ion-item>
                             <ion-label position="floating">Bio</ion-label>
                             <ion-textarea formControlName="bio"></ion-textarea>
@@ -127,7 +147,8 @@
                                     <ion-button color="light" disabled="{{true}}">REGISTER</ion-button>
                                 </ion-col>
                                 <ion-col size="6">
-                                    <ion-button color="success" type="submit" disabled="{{!registerForm.valid}}">LOGIN
+                                    <ion-button color="success" type="submit" disabled="{{!registerForm.valid}}">
+                                        LOGIN
                                     </ion-button>
                                 </ion-col>
                             </ion-row>

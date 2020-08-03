@@ -9,14 +9,25 @@
 
     <ion-card>
         <ion-card-header>
+            {{formData | json}}
             <ion-card-subtitle>First Name</ion-card-subtitle>
-            <ion-card-title class="w-400">Nodira</ion-card-title>
+            <ion-card-title class="w-400">{{formData.firstName}}</ion-card-title>
             <ion-item lines="full"></ion-item>
             <ion-card-subtitle>Last Name</ion-card-subtitle>
-            <ion-card-title class="w-400">Ibrogimova</ion-card-title>
+            <ion-card-title class="w-400">{{formData.lastName}}</ion-card-title>
+            <ion-item lines="full"></ion-item>
+            <ion-card-subtitle>Age</ion-card-subtitle>
+            <ion-card-title class="w-400">{{formData.age}}</ion-card-title>
+            <ion-item lines="full"></ion-item>
+            <ion-card-subtitle>Username</ion-card-subtitle>
+            <ion-card-title class="w-400">{{formData.username}}</ion-card-title>
             <ion-item lines="full"></ion-item>
             <ion-card-subtitle>Phone Number</ion-card-subtitle>
             <ion-card-title class="w-400">(xx) xxx-xx-xx</ion-card-title>
+            <ion-item lines="full"></ion-item>
+            <ion-card-subtitle>Bio</ion-card-subtitle>
+            <ion-card-title class="w-400">{{formData.bio}}</ion-card-title>
+
         </ion-card-header>
         <ion-card-content class="text-center">
             <ion-button shape="round" color="danger" (click)="goToMyRequests()">VIEW REQUESTS ></ion-button>
