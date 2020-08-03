@@ -8,7 +8,7 @@
             <ion-slide>
                 <div class="slide">
                     <div class="slide__img">
-                        <img class="slide-img" src="assets/photos/logo.png"/>
+                        <img class="slide-img text-center" src="assets/photos/logo.png"/>
                     </div>
                     <div class="slide__header">
                         <h2>My Mahalla</h2>
@@ -21,8 +21,8 @@
 
             <ion-slide>
                 <div class="slide">
-                    <div class="slide__img">
-                        <img class="slide-img" src="assets/photos/communication.png"/>
+                    <div class="slide__img text-center">
+                        <img src="assets/photos/communication.png"/>
                     </div>
                     <div class="slide__header">
                         <h2>My Mahalla</h2>
@@ -35,7 +35,7 @@
 
             <ion-slide>
                 <div class="slide">
-                    <div class="slide__img">
+                    <div class="slide__img text-center">
                         <img class="slide-img" src="assets/photos/communicate-problems.png"/>
                     </div>
                     <div class="slide__header">
@@ -47,28 +47,11 @@
                 </div>
             </ion-slide>
 
-            <!--<ion-slide class="swiper-slide">-->
-            <!--<div class="slide">-->
-            <!--<img src="assets/photos/communication-1.png"/>-->
-            <!--<h2>My Mahalla</h2>-->
-            <!--<p>Serves as a tool for communication between <b>people and government</b> agencies.</p>-->
-            <!--</div>-->
-            <!--</ion-slide>-->
-
-            <!--<ion-slide class="swiper-slide">-->
-            <!--<div class="slide">-->
-            <!--<img src="assets/photos/communicate-problems.png"/>-->
-            <!--<h2>My Mahalla</h2>-->
-            <!--<p><b>Communicate problems</b> with the population to the relevant state authorities-->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</ion-slide>-->
-
             <ion-slide>
 
                 <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
 
-                <ion-list lines="none">
+                <ion-list class="slide--list">
 
                     <form [formGroup]="slideOneForm">
 
@@ -142,21 +125,6 @@
                 </ion-list>
 
             </ion-slide>
-
-            <!--<ion-slide>-->
-
-            <!--<ion-list lines="none">-->
-
-            <!--<form [formGroup]="slideTwoForm">-->
-
-
-            <!--</form>-->
-
-            <!--</ion-list>-->
-
-            <!--<ion-button expand="full" color="primary" (click)="save()">Create Account!</ion-button>-->
-
-            <!--</ion-slide>-->
 
         </ion-slides>
 
