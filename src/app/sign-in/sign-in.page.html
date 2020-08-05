@@ -48,9 +48,10 @@
             </ion-slide>
 
             <ion-slide>
-
-                <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
-
+                <ion-item lines="none" *ngIf="submitAttempt && !registerForm.valid">
+                    <p style="color: #ea6153;">Please fill out all details
+                        accurately.</p>
+                </ion-item>
 
                 <ion-list class="slide--list">
                     <p>Registering new account is in process. Please fill the form with current data and login to
@@ -58,6 +59,7 @@
                         the app.</p>
 
                     <form [formGroup]="registerForm" (ngSubmit)="save()">
+
                         <ion-item>
                             <ion-label position="stacked">First Name
                                 <ion-text color="danger" class="ion-color ion-color-danger md hydrated">*</ion-text>
@@ -114,26 +116,6 @@
                                 *ngIf="!registerForm.controls.username.valid && !registerForm.controls.username.pending && (registerForm.controls.username.dirty || submitAttempt)">
                             <p>Sorry, that username can not be used!</p>
                         </ion-item>
-
-
-                        <ion-item>
-                            <ion-label position="stacked">Phone Number
-                                <ion-text color="danger" class="ion-color ion-color-danger md hydrated">*</ion-text>
-                            </ion-label>
-                            <ion-input
-                                    [class.invalid]="!registerForm.controls.phoneNumber.valid && (registerForm.controls.phoneNumber.dirty || submitAttempt)"
-                                    formControlName="username" type="number"></ion-input>
-                        </ion-item>
-
-
-                        <div *ngIf="submitted && registerForm.controls.phoneNumber.errors" class="invalid-feedback">
-                            <div *ngIf="registerForm.controls.phoneNumber.errors.required">Phone number is required
-                            </div>
-                            <div *ngIf="registerForm.controls.phoneNumber.errors.pattern || registerForm.controls.phoneNumber.errors.maxlength || registerForm.controls.phoneNumber.errors.minlength">
-                                Phone number must be at least 10 numbers
-                            </div>
-                        </div>
-
 
                         <ion-item>
                             <ion-label position="floating">Bio</ion-label>

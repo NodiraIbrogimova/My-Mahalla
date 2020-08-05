@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {FormService} from '../../services/form.service';
 
@@ -7,11 +7,12 @@ import {FormService} from '../../services/form.service';
     templateUrl: 'profile.page.html',
     styleUrls: ['profile.page.scss']
 })
-export class ProfilePage implements OnInit {
+export class ProfilePage {
     public formData = {firstName: null, lastName: null, age: null, username: null, bio: null};
 
     constructor(private navController: NavController, private formService: FormService) {
-        this.formData = this.formService.form_data;
+        if (this.formData != null || this.formData != undefined || this.formData != {})
+            this.formData = this.formService.form_data;
     }
 
     goToMyRequests() {
