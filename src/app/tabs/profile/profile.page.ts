@@ -24,4 +24,9 @@ export class ProfilePage implements OnInit {
     goToMyRequests() {
         this.navController.navigateRoot(`app/tabs/my-requests`);
     }
+
+    logout() {
+        this.formService.removeJson(1);
+        this.navController.navigateRoot(``);
+    }
 }
