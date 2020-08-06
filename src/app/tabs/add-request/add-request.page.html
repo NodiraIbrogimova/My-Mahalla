@@ -80,9 +80,13 @@
     </ion-grid>
 
     <div class="text-center">
-        <ion-button size="large" shape="round" (click)="photoService.addNewToGallery()">
+        <ion-button color="light" size="large" shape="round" (click)="photoService.addNewToGallery()">
             <ion-icon slot="icon-only" name="camera"></ion-icon>
         </ion-button>
+    </div>
+
+    <div class="text-center">
+        <ion-button color="success" shape="round" (click)="presentLoading()">Submit request</ion-button>
     </div>
 
 </ion-content>

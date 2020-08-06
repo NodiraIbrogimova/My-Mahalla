@@ -16,9 +16,8 @@ export class ProfilePage implements OnInit {
     ngOnInit() {
         if (localStorage.length > 0) {
             this.formData = this.formService.getJson(1);
-            console.log('profile initialized with data ', this.formData);
         } else {
-            console.log('profile is read, but yet no data found');
+            this.formData = {firstName: null, lastName: null, age: null, username: null, bio: null};
         }
     }
 

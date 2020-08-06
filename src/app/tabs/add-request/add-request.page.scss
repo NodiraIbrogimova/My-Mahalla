@@ -102,5 +102,12 @@ ion-content ion-toolbar {
 }
 
 ion-icon[name="camera"] {
+  color: #000;
+}
+
+.my-custom-class {
+  --background: #222;
+  --spinner-color: #fff;
+
   color: #fff;
 }

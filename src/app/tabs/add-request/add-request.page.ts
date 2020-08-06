@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActionSheetController} from '@ionic/angular';
+import {ActionSheetController, LoadingController, NavController} from '@ionic/angular';
 
 import {PhotoService} from '../../services/photo.service';
 
@@ -19,10 +19,11 @@ export class AddRequestPage implements OnInit {
         {type: 'Financial', img: 'assets/categories-icons/financial-category.png'},
         {type: 'Education', img: 'assets/categories-icons/education-category.png'},
     ];
+    public APIKey = 'AIzaSyDO5TIdw-CnjK9UXDAIF21oEjZ3JjaLmkA';
 
-    API_key = 'AIzaSyDO5TIdw-CnjK9UXDAIF21oEjZ3JjaLmkA';
-
-    constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController) {
+    constructor(public photoService: PhotoService, public actionSheetController: ActionSheetController,
+                public loadingController: LoadingController,
+                private navController: NavController) {
     }
 
     ngOnInit() {
@@ -49,6 +50,24 @@ export class AddRequestPage implements OnInit {
             }]
         });
         await actionSheet.present();
+    }
+
+    goToMyRequests() {
+        this.navController.navigateRoot(`app/tabs/my-requests`);
+    }
+
+    async presentLoading() {
+        const loading = await this.loadingController.create({
+            cssClass: 'my-custom-class',
+            message: 'Please wait...',
+            duration: 2000
+        });
+        await loading.present();
+
+        this.goToMyRequests();
+
+        const {role, data} = await loading.onDidDismiss();
+        console.log('Loading dismissed with role:', role);
     }
 
 }
