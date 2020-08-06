@@ -29,22 +29,14 @@ export class SignInPage {
                 lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
                 age: ['', AgeValidator.isValid],
                 username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')]), UsernameValidator.checkUsername],
-                // phoneNumber: ['', [Validators.required,
-                //     Validators.pattern('^[0-9]*$'),
-                //     Validators.minLength(9), Validators.maxLength(12)]],
                 bio: ['']
             });
         }
-
     }
 
     save() {
         this.submitAttempt = true;
-
         this.formService.saveJson(1, this.registerForm.value);
-
-        console.log('success!');
-        console.log(this.registerForm.value);
         this.presentLoading().then((resolve) => {
             console.log('enters then');
             this.navController.navigateRoot(`app/tabs/home`);
