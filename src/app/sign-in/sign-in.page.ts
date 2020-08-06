@@ -15,33 +15,39 @@ export class SignInPage {
     @ViewChild('signUpSlider') signUpSlider;
 
     public registerForm: FormGroup;
-    images = ['assets/photos/logo.png', 'assets/photos/communication.png', 'assets/photos/communicate-problems.png'];
-
     public submitAttempt = false;
 
     constructor(private router: Router, private navController: NavController, private formBuilder: FormBuilder,
                 private formService: FormService, public loadingController: LoadingController) {
 
-        this.registerForm = formBuilder.group({
-            firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-            lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-            age: ['', AgeValidator.isValid],
-            username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')]), UsernameValidator.checkUsername],
-            // phoneNumber: ['', [Validators.required,
-            //     Validators.pattern('^[0-9]*$'),
-            //     Validators.minLength(9), Validators.maxLength(12)]],
-            bio: ['']
-        });
+        if (localStorage.length > 0) {
+            this.navController.navigateRoot(`app/tabs/home`)
+        }
+        else {
+            this.registerForm = formBuilder.group({
+                firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+                age: ['', AgeValidator.isValid],
+                username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')]), UsernameValidator.checkUsername],
+                // phoneNumber: ['', [Validators.required,
+                //     Validators.pattern('^[0-9]*$'),
+                //     Validators.minLength(9), Validators.maxLength(12)]],
+                bio: ['']
+            });
+        }
+
     }
 
     save() {
         this.submitAttempt = true;
-        this.formService.form_data = this.registerForm.value;
+
+        this.formService.saveJson(1, this.registerForm.value);
+
         console.log('success!');
         console.log(this.registerForm.value);
         this.presentLoading().then((resolve) => {
-            console.log('enteres then');
-            this.navController.navigateRoot(`app/tabs/home`)
+            console.log('enters then');
+            this.navController.navigateRoot(`app/tabs/home`);
         });
 
     }
@@ -53,7 +59,6 @@ export class SignInPage {
             duration: 2000
         });
         await loading.present();
-
         const {role, data} = await loading.onDidDismiss();
         console.log('Loading dismissed!');
     }

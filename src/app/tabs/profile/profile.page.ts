@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {FormService} from '../../services/form.service';
 
@@ -7,12 +7,19 @@ import {FormService} from '../../services/form.service';
     templateUrl: 'profile.page.html',
     styleUrls: ['profile.page.scss']
 })
-export class ProfilePage {
+export class ProfilePage implements OnInit {
     public formData = {firstName: null, lastName: null, age: null, username: null, bio: null};
 
     constructor(private navController: NavController, private formService: FormService) {
-        if (this.formData != null || this.formData != undefined || this.formData != {})
-            this.formData = this.formService.form_data;
+    }
+
+    ngOnInit() {
+        if (localStorage.length > 0) {
+            this.formData = this.formService.getJson(1);
+            console.log('profile initialized with data ', this.formData);
+        } else {
+            console.log('profile is read, but yet no data found');
+        }
     }
 
     goToMyRequests() {

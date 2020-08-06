@@ -4,9 +4,20 @@ import {Injectable} from '@angular/core';
     providedIn: 'root'
 })
 export class FormService {
-    public form_data = {};
 
     constructor() {
-        console.log('service works ', this.form_data);
     }
+
+    saveJson(id, obj) {
+        localStorage.setItem(id, JSON.stringify(obj));
+    }
+
+    getJson(id) {
+        return JSON.parse(localStorage.getItem(id));
+    }
+
+    removeJson(id) {
+        localStorage.removeItem(id);
+    }
+
 }
