@@ -1,4 +1,4 @@
-package io.ionic.demo.pg.cap.ng;
+package io.ionic.myMahalla;
 
 import android.os.Bundle;
 
