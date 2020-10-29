@@ -1,31 +1,77 @@
-# Build Your First Ionic App: Photo Gallery (Ionic Angular and Capacitor)
+# My Mahalla
 
-Get started with Ionic by building a photo gallery app that runs on iOS, Android, and the web - with just one codebase. This is the complete project referenced in the ["Your First App: Angular" guide](https://ionicframework.com/docs/angular/your-first-app). Follow along to create a complete CRUD (create-read-update-delete) experience.
-
-Powered by [Ionic Angular](https://ionicframework.com/docs/angular/overview) (web app) and [Capacitor](https://capacitor.ionicframework.com) (native app runtime).
+My Mahalla - a mobile app to reach local government agencies. It helps Uzbek citizens reach government agencies and access their services via mobile app. No need to call or wait in lines anymore.
 
 ## How It Works
 
-After the user navigates to Tab 2 (Photos), they can tap/click on the camera button to open up the device's camera. After taking or selecting a photo, it's stored permanently into the device's filesystem. When the user reopens the app at a later time, the photo images are loaded from the filesystem and displayed again in the gallery. The user can tap on a photo to be presented with the option to remove the photo.
+**My Mahalla** can be used as a tool to report issues with further detail as:
+- Category
+- Urgency level
+- Geolocation
+- Description
+- Title
+- Media
 
-## Feature Overview
-* App framework: [Angular](https://angular.io)
-* UI components: [Ionic Framework](https://ionicframework.com/docs/components)
-  * Camera button: [Floating Action Button (FAB)](https://ionicframework.com/docs/api/fab)
-  * Photo Gallery display: [Grid](https://ionicframework.com/docs/api/grid)
-  * Delete Photo dialog: [Action Sheet](https://ionicframework.com/docs/api/action-sheet) 
-* Native runtime: [Capacitor](https://capacitor.ionicframework.com)
-  * Taking photos: [Camera API](https://capacitor.ionicframework.com/docs/apis/camera)
-  * Writing photo to the filesystem: [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem)
-  * Storing photo gallery metadata: [Storage API](https://capacitor.ionicframework.com/docs/apis/storage)
 
-## Project Structure
-* Tab2 (Photos) (`src/app/tab2/`): Photo Gallery UI and basic logic.
-* PhotoService (`src/app/services/photo.service.ts`): Logic encapsulating Capacitor APIs, including Camera, Filesystem, and Storage.
+Citizens can report issues in more detail in an easy way and our app ensures that it reaches the appropriate authority.
+This is a tool to send the request with detailed information to the relevant state authority.
+We don't only deliver issues, but also group and filter them in a way that is convenient for the citizens to track issues.
+Through the following statistics, we can see issues reported per organization in Tashkent region for 2 months (according to years until 2020). The highest number of applications was reported in Tashkent Mayor's office while the lowest number is recorded in the Ministry of Finance. Central Bank and the Ministry of Labor received almost the same number of reported issues.
+
+<img width="622" alt="image" src="https://user-images.githubusercontent.com/11291840/97618323-b1e90680-1a40-11eb-9b32-762c53eccdea.png">
+
+
+## Application Modules
+
+Authorization - user will sign up or log in to profile
+
+1. Home - a user can see pressing issues, filter issues by category, and visit a group of issues stored under a particular category.
+
+
+![page - home](https://user-images.githubusercontent.com/11291840/97618932-73078080-1a41-11eb-8473-dfe816fb70ea.jpg)
+
+
+2. My Requests - a user can see self-uploaded issues/reports
+
+
+![page - myrequests](https://user-images.githubusercontent.com/11291840/97618942-7569da80-1a41-11eb-95db-8d934a4ee07c.jpg)
+
+
+3. Add Request - a user can send a report about the issue
+
+
+![page - reportissue](https://user-images.githubusercontent.com/11291840/97618953-7864cb00-1a41-11eb-82ec-a45707c30087.jpg)
+![page - reportissue2](https://user-images.githubusercontent.com/11291840/97618977-7dc21580-1a41-11eb-936e-ae84f6b22370.jpg)
+
+
+4. Search - a user can 
+
+
+![page - search](https://user-images.githubusercontent.com/11291840/97618988-7f8bd900-1a41-11eb-9e5c-68a5b5dcedc5.jpg)
+
+
+5. Profile - a user can see personal profile details
+
+
+![page - profile](https://user-images.githubusercontent.com/11291840/97619005-84508d00-1a41-11eb-8215-e5dcb1589f7b.jpg)
+*Note: Authorization feature is under process*
+
+## Target Audience
+
+Our target audience is citizens or people living in Uzbekistan who are facing issues, and government agencies such as:
+- Ministry of Finance 
+- UzNeftGaz
+- Justice Department
+- Central Bank
+- Ministry of Labor
+- Tashkent Region Mayor’s Office
+- Ministry of Internal Affairs
+- Tashkent Mayor’s Office
+
+and others
+
 
 ## How to Run
-
-> Note: It's highly recommended to follow along with the [tutorial guide](https://ionicframework.com/docs/angular/your-first-app), which goes into more depth, but this is the fastest way to run the app. 
 
 0) Install Ionic if needed: `npm install -g @ionic/cli`.
 1) Clone this repository.
