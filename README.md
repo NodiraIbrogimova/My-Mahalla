@@ -2,6 +2,9 @@
 
 My Mahalla - a mobile app to reach local government agencies. It helps Uzbek citizens reach government agencies and access their services via mobile app. No need to call or wait in lines anymore.
 
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/11291840/97619555-2cfeec80-1a42-11eb-8ae9-5e23bb41f766.png">
+
+
 ## How It Works
 
 **My Mahalla** can be used as a tool to report issues with further detail as:
@@ -27,33 +30,14 @@ Authorization - user will sign up or log in to profile
 
 1. Home - a user can see pressing issues, filter issues by category, and visit a group of issues stored under a particular category.
 
-
-![page - home](https://user-images.githubusercontent.com/11291840/97618932-73078080-1a41-11eb-8473-dfe816fb70ea.jpg)
-
-
 2. My Requests - a user can see self-uploaded issues/reports
-
-
-![page - myrequests](https://user-images.githubusercontent.com/11291840/97618942-7569da80-1a41-11eb-95db-8d934a4ee07c.jpg)
-
 
 3. Add Request - a user can send a report about the issue
 
-
-![page - reportissue](https://user-images.githubusercontent.com/11291840/97618953-7864cb00-1a41-11eb-82ec-a45707c30087.jpg)
-![page - reportissue2](https://user-images.githubusercontent.com/11291840/97618977-7dc21580-1a41-11eb-936e-ae84f6b22370.jpg)
-
-
 4. Search - a user can 
-
-
-![page - search](https://user-images.githubusercontent.com/11291840/97618988-7f8bd900-1a41-11eb-9e5c-68a5b5dcedc5.jpg)
-
 
 5. Profile - a user can see personal profile details
 
-
-![page - profile](https://user-images.githubusercontent.com/11291840/97619005-84508d00-1a41-11eb-8215-e5dcb1589f7b.jpg)
 *Note: Authorization feature is under process*
 
 ## Target Audience
@@ -79,3 +63,11 @@ and others
 3) Install all packages: `npm install`.
 4) Run on the web: `ionic serve`.
 5) Run on iOS or Android: See [here](https://ionicframework.com/docs/building/running).
+
+## Contributors
+- Nodira Ibrogimova (software development)
+- Vlad Azimkhodjaev (UI/UX)
+
+## Contributing
+
+If you have any suggestions regarding the improvement of the design or implementation, pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
