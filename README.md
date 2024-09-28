@@ -65,8 +65,10 @@ and others
 5) Run on iOS or Android: See [here](https://ionicframework.com/docs/building/running).
 
 ## Contributors
-- Nodira Ibrogimova (software development)
 - Vlad Azimkhodjaev (UI/UX)
+- Sukhrob Ibrogimov (Project Manager)
+- Nodira Ibrogimova (Software Development)
+
 
 ## Contributing
 
